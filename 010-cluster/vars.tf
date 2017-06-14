@@ -24,8 +24,6 @@ variable "aws_zones" {
   description = "A list of zones to spread instances across. Ex: [\"us-east-1c\", \"us-east-1d\", \"us-east-1e\"]"
 }
 
-variable "cloudflare_email" {}
-variable "cloudflare_token" {}
 variable "logentries_account_key" {}
 
 variable "cert_domain_name" {

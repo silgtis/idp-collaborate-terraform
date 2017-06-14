@@ -29,7 +29,8 @@ The following instructions use the IdP name `acme` as an example. Substitute wit
 
     1. View output and copy `nat_gateway_ip`. Give the IP address to whomever can update internal 
        firewall rules to allow HTTPS traffic on port 443 from that IP Address to the network where
-       the personnel system is running for ID Sync to pull identities from. 
+       the personnel system is running for ID Sync to pull identities from. If using Google Sheets
+       or other publicly accessible store for identities this step is not needed.
        
 5. Run plan and apply for `020-database`
 
