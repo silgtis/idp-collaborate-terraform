@@ -13,15 +13,11 @@ variable "aws_region" {
 }
 
 variable "aws_secret_access_key" {}
-variable "cloudflare_email" {}
-variable "cloudflare_token" {}
 
 variable "db_name" {
   default = "idproot"
   description = "Default RDS database created. It is not used so leaving as default is fine."
 }
-
-variable "logentries_account_key" {}
 
 variable "multi_az" {
   description = "Whether or not to create a Multi-AZ RDS instance. Values can be 'true' or 'false'"

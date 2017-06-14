@@ -13,9 +13,6 @@ variable "aws_region" {
 }
 
 variable "aws_secret_access_key" {}
-variable "cloudflare_email" {}
-variable "cloudflare_token" {}
-variable "logentries_account_key" {}
 
 variable "tf_remote_cluster" {
   description = "Environment name in Terraform Enterprise for cluster"
