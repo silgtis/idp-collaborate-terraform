@@ -3,12 +3,3 @@ provider "aws" {
   access_key = "${var.aws_access_key_id}"
   secret_key = "${var.aws_secret_access_key}"
 }
-
-provider "cloudflare" {
-  email = "${var.cloudflare_email}"
-  token = "${var.cloudflare_token}"
-}
-
-provider "logentries" {
-  account_key = "${var.logentries_account_key}"
-}
