@@ -13,7 +13,6 @@ module "pwmanager" {
   from_email = "${var.from_email}"
   from_name = "${var.from_name}"
   logo_url = "${var.logo_url}"
-  mailer_usefiles = "${var.mailer_usefiles}"
   mailer_host = "${var.mailer_host}"
   mailer_username = "${var.mailer_username}"
   mailer_password = "${var.mailer_password}"

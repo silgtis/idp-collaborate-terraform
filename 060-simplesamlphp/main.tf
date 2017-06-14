@@ -9,7 +9,6 @@ module "ssp" {
   cloudflare_domain = "${var.cloudflare_domain}"
   docker_image = "${data.terraform_remote_state.ecr.ecr_repo_simplesamlphp}"
   forgot_password_url = "https://${data.terraform_remote_state.pwmanager.ui_hostname}/#/forgot"
-  hub_mode = "${var.hub_mode}"
   id_broker_access_token = "${data.terraform_remote_state.broker.access_token_ssp}"
   id_broker_base_uri = "https://${data.terraform_remote_state.broker.hostname}"
   memcache_host1 = "${data.terraform_remote_state.elasticache.cache_nodes.0.address}"
