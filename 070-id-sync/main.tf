@@ -16,4 +16,8 @@ module "idsync" {
   ecs_cluster_id = "${data.terraform_remote_state.core.ecs_cluster_id}"
   ecsServiceRole_arn = "${data.terraform_remote_state.core.ecsServiceRole_arn}"
   alb_dns_name = "${data.terraform_remote_state.cluster.alb_dns_name}"
+  mailer_host = "${var.mailer_host}"
+  mailer_username = "${var.mailer_username}"
+  mailer_password = "${var.mailer_password}"
+  notifier_email_to = "${var.notifier_email_to}"
 }

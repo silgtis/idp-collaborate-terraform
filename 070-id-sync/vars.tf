@@ -39,6 +39,19 @@ variable "sync_subdomain" {
   description = "Something like 'acme-sync'"
 }
 
+variable "mailer_host" {
+  type = "string"
+}
+variable "mailer_username" {
+  type = "string"
+}
+variable "mailer_password" {
+  type = "string"
+}
+variable "notifier_email_to" {
+  type = "string"
+}
+
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
