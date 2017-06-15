@@ -2,6 +2,7 @@ module "phpmyadmin" {
   source = "github.com/silinternational/idp-in-a-box//terraform/030-phpmyadmin"
   app_name = "${var.app_name}"
   app_env = "${var.app_env}"
+  idp_name = "${var.idp_name}"
   vpc_id = "${data.terraform_remote_state.cluster.vpc_id}"
   alb_https_listener_arn = "${data.terraform_remote_state.cluster.alb_https_listener_arn}"
   subdomain = "${var.pma_subdomain}"
