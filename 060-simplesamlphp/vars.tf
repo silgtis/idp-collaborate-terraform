@@ -3,7 +3,7 @@ variable "app_env" {
 }
 
 variable "app_name" {
-  default = "ssp"
+  default = "simplesamlphp"
   description = "Used in ECS service names and logs, best to leave as default."
 }
 
