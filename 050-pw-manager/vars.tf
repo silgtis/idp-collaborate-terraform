@@ -42,6 +42,10 @@ variable "from_name" {
 variable "idp_name" {
   description = "Short name of IdP for logs, something like 'acme'"
 }
+variable "idp_username_hint" {
+  type = "string"
+  default = "Username or email address"
+}
 
 variable "logentries_account_key" {}
 
