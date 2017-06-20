@@ -25,6 +25,12 @@ output "vpc_default_sg_id" {
 output "vpc_id" {
   value = "${module.cluster.vpc_id}"
 }
+output "public_subnet_cidr_blocks" {
+  value = ["${module.cluster.public_subnet_cidr_blocks}"]
+}
+output "private_subnet_cidr_blocks" {
+  value = ["${module.cluster.private_subnet_cidr_blocks}"]
+}
 
 /*
  * Application load balancer outputs
