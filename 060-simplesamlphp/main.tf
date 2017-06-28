@@ -1,3 +1,7 @@
+module "cf_ips" {
+  source = "github.com/silinternational/terraform-modules//cloudflare/ips"
+}
+
 module "ssp" {
   source                 = "github.com/silinternational/idp-in-a-box//terraform/060-simplesamlphp"
   app_name               = "${var.app_name}"
@@ -23,5 +27,5 @@ module "ssp" {
   ecsServiceRole_arn     = "${data.terraform_remote_state.core.ecsServiceRole_arn}"
   alb_dns_name           = "${data.terraform_remote_state.cluster.alb_dns_name}"
   idp_name               = "${var.idp_name}"
-  trusted_ip_addresses   = ["${concat(var.trusted_ip_addresses, data.terraform_remote_state.cluster.public_subnet_cidr_blocks)}"]
+  trusted_ip_addresses   = ["${concat(module.cf_ips.ipv4_cidrs, var.trusted_ip_addresses, data.terraform_remote_state.cluster.public_subnet_cidr_blocks)}"]
 }
