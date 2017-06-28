@@ -4,6 +4,8 @@ module "cf_ips" {
 
 module "ssp" {
   source                 = "github.com/silinternational/idp-in-a-box//terraform/060-simplesamlphp"
+  memory                 = "${var.memory}"
+  cpu                    = "${var.cpu}"
   app_name               = "${var.app_name}"
   app_env                = "${var.app_env}"
   logentries_set_id      = "${data.terraform_remote_state.cluster.logentries_set_id}"
@@ -28,4 +30,5 @@ module "ssp" {
   alb_dns_name           = "${data.terraform_remote_state.cluster.alb_dns_name}"
   idp_name               = "${var.idp_name}"
   trusted_ip_addresses   = ["${concat(module.cf_ips.ipv4_cidrs, var.trusted_ip_addresses, data.terraform_remote_state.cluster.public_subnet_cidr_blocks)}"]
+  desired_count          = "${var.desired_count}"
 }

@@ -1,3 +1,11 @@
+variable "memory" {
+  default = "96"
+}
+
+variable "cpu" {
+  default = "250"
+}
+
 variable "app_env" {
   description = "Environment name, ex: 'staging' or 'production'"
 }
@@ -72,4 +80,8 @@ variable "tf_remote_broker" {
 
 variable "tf_remote_pwmanager" {
   description = "Environment name in Terraform Enterprise for pwmanager"
+}
+
+variable "desired_count" {
+  default = "1"
 }
