@@ -41,6 +41,10 @@ variable "ssp_subdomain" {
 variable "recaptcha_key" {}
 variable "recaptcha_secret" {}
 
+variable "analytics_id" {
+  type = "string"
+}
+
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
