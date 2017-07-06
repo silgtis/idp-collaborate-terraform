@@ -31,4 +31,5 @@ module "ssp" {
   idp_name               = "${var.idp_name}"
   trusted_ip_addresses   = ["${concat(module.cf_ips.ipv4_cidrs, var.trusted_ip_addresses, data.terraform_remote_state.cluster.public_subnet_cidr_blocks)}"]
   desired_count          = "${var.desired_count}"
+  analytics_id           = "${var.analytics_id}"
 }

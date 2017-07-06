@@ -54,6 +54,10 @@ variable "trusted_ip_addresses" {
   default = []
 }
 
+variable "analytics_id" {
+  type = "string"
+}
+
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
