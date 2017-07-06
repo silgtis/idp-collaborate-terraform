@@ -24,4 +24,5 @@ module "ssp" {
   alb_dns_name = "${data.terraform_remote_state.cluster.alb_dns_name}"
   idp_name = "${var.idp_name}"
   trusted_ip_addresses = ["${data.terraform_remote_state.cluster.public_subnet_cidr_blocks}"]
+  analytics_id = "${var.analytics_id}"
 }
