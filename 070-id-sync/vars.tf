@@ -1,9 +1,17 @@
+variable "memory" {
+  default = "128"
+}
+
+variable "cpu" {
+  default = "128"
+}
+
 variable "app_env" {
   description = "Environment name, ex: 'staging' or 'production'"
 }
 
 variable "app_name" {
-  default = "id-sync"
+  default     = "id-sync"
   description = "Used in ECS service names and logs, best to leave as default."
 }
 
@@ -23,7 +31,7 @@ variable "id_store_adapter" {
 }
 
 variable "id_store_config" {
-  type = "map"
+  type        = "map"
   description = "A map of configuration data to pass into id-sync as env vars, keys should start with 'ID_STORE_CONFIG_'"
 }
 
@@ -42,12 +50,15 @@ variable "sync_subdomain" {
 variable "mailer_host" {
   type = "string"
 }
+
 variable "mailer_username" {
   type = "string"
 }
+
 variable "mailer_password" {
   type = "string"
 }
+
 variable "notifier_email_to" {
   type = "string"
 }
@@ -55,12 +66,15 @@ variable "notifier_email_to" {
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
+
 variable "tf_remote_cluster" {
   description = "Environment name in Terraform Enterprise for cluster"
 }
+
 variable "tf_remote_ecr" {
   description = "Environment name in Terraform Enterprise for ecr"
 }
+
 variable "tf_remote_broker" {
   description = "Environment name in Terraform Enterprise for broker"
 }
