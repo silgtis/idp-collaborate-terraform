@@ -46,6 +46,10 @@ variable "ssp_subdomain" {
   description = "Something like 'acme'"
 }
 
+variable "show_saml_errors" {
+  default = "false"
+}
+
 variable "recaptcha_key" {}
 variable "recaptcha_secret" {}
 
