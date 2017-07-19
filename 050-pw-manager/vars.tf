@@ -59,6 +59,10 @@ variable "idp_name" {
   description = "Short name of IdP for logs, something like 'acme'"
 }
 
+variable "idp_display_name" {
+  description = "Display name of IdP for UI, something like 'ACME Inc.'"
+}
+
 variable "idp_username_hint" {
   type    = "string"
   default = "Username or email address"

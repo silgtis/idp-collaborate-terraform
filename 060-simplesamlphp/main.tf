@@ -29,6 +29,7 @@ module "ssp" {
   ecsServiceRole_arn     = "${data.terraform_remote_state.core.ecsServiceRole_arn}"
   alb_dns_name           = "${data.terraform_remote_state.cluster.alb_dns_name}"
   idp_name               = "${var.idp_name}"
+  idp_display_name       = "${var.idp_display_name}"
   trusted_ip_addresses   = ["${concat(module.cf_ips.ipv4_cidrs, var.trusted_ip_addresses, data.terraform_remote_state.cluster.public_subnet_cidr_blocks)}"]
   desired_count          = "${var.desired_count}"
   analytics_id           = "${var.analytics_id}"

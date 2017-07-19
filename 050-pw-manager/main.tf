@@ -11,6 +11,7 @@ module "pwmanager" {
   api_subdomain          = "${var.api_subdomain}"
   cloudflare_domain      = "${var.cloudflare_domain}"
   idp_name               = "${var.idp_name}"
+  idp_display_name       = "${var.idp_display_name}"
   idp_username_hint      = "${var.idp_username_hint}"
   alerts_email           = "${var.alerts_email}"
   support_email          = "${var.support_email}"
