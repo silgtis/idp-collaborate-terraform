@@ -1,9 +1,21 @@
+variable "memory" {
+  type        = "string"
+  description = "Amount of memory to allocate to container, recommend '200' for production"
+  default     = "96"
+}
+
+variable "cpu" {
+  type        = "string"
+  description = "Amount of CPU to allocate to container, recommend '250' for production"
+  default     = "250"
+}
+
 variable "app_env" {
   description = "Environment name, ex: 'staging' or 'production'"
 }
 
 variable "app_name" {
-  default = "id-broker"
+  default     = "id-broker"
   description = "Used in ECS service names and logs, best to leave as default."
 }
 
@@ -24,12 +36,12 @@ variable "cloudflare_token" {}
 variable "cloudflare_domain" {}
 
 variable "db_name" {
-  default = "idbroker"
+  default     = "idbroker"
   description = "Database name, can be changed but default is fine."
 }
 
-variable "ecs_desired_count" {
-  description = "Number of tasks to run, recommended: '2'"
+variable "desired_count" {
+  description = "Number of tasks to run, recommended: '2' for production"
 }
 
 variable "idp_name" {
@@ -82,19 +94,22 @@ variable "notification_email" {
 }
 
 variable "ssl_policy" {
-  type = "string"
+  type    = "string"
   default = "ELBSecurityPolicy-TLS-1-2-2017-01"
 }
 
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
+
 variable "tf_remote_cluster" {
   description = "Environment name in Terraform Enterprise for cluster"
 }
+
 variable "tf_remote_database" {
   description = "Environment name in Terraform Enterprise for database"
 }
+
 variable "tf_remote_ecr" {
   description = "Environment name in Terraform Enterprise for ecr"
 }

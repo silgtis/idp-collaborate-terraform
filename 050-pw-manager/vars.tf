@@ -1,3 +1,19 @@
+variable "memory" {
+  type        = "string"
+  description = "Amount of memory to allocate to container, recommend '128' for production"
+  default     = "96"
+}
+
+variable "cpu" {
+  type        = "string"
+  description = "Amount of CPU to allocate to container, recommend '250' for production"
+  default     = "250"
+}
+
+variable "desired_count" {
+  default = "1"
+}
+
 variable "alerts_email" {
   description = "Email address to send alerts to"
 }
@@ -11,7 +27,7 @@ variable "app_env" {
 }
 
 variable "app_name" {
-  default = "pw-manager"
+  default     = "pw-manager"
   description = "Used in ECS service names and logs, best to leave as default."
 }
 
@@ -27,7 +43,7 @@ variable "cloudflare_token" {}
 variable "cloudflare_domain" {}
 
 variable "db_name" {
-  default = "pwmanager"
+  default     = "pwmanager"
   description = "Database name, can be changed but default is fine."
 }
 
@@ -42,8 +58,13 @@ variable "from_name" {
 variable "idp_name" {
   description = "Short name of IdP for logs, something like 'acme'"
 }
+
+variable "idp_display_name" {
+  description = "Display name of IdP for UI, something like 'ACME Inc.'"
+}
+
 variable "idp_username_hint" {
-  type = "string"
+  type    = "string"
   default = "Username or email address"
 }
 
@@ -68,6 +89,7 @@ variable "mailer_username" {
 variable "mysql_user" {
   default = "pwmanager"
 }
+
 variable "recaptcha_key" {}
 variable "recaptcha_secret" {}
 
@@ -82,15 +104,19 @@ variable "ui_subdomain" {
 variable "tf_remote_core" {
   description = "Environment name in Terraform Enterprise for core"
 }
+
 variable "tf_remote_cluster" {
   description = "Environment name in Terraform Enterprise for cluster"
 }
+
 variable "tf_remote_database" {
   description = "Environment name in Terraform Enterprise for database"
 }
+
 variable "tf_remote_ecr" {
   description = "Environment name in Terraform Enterprise for ecr"
 }
+
 variable "tf_remote_broker" {
   description = "Environment name in Terraform Enterprise for broker"
 }
